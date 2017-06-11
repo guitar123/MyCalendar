@@ -8,8 +8,23 @@
     android:orientation="vertical"
     tools:context="com.sample.calendar.mycalendar.MainActivity">
 
+
     <com.sample.calendar.calendar.CalendarView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="hint"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sample.calendar.mycalendar.TimeSectionPicker
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
 </LinearLayout>
