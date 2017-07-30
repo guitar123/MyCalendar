@@ -1,0 +1,7 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="page_title_padding">24dp</dimen>
+    <dimen name="page_content_top_padding">73dp</dimen>
+    <dimen name="size_title_bar_height">73dp</dimen>
+    <dimen name="margin_top_order_title">62dp</dimen>
+</resources>

@@ -15,36 +15,53 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 时间选择单元
+ */
 public class TimeSectionPicker extends View implements View.OnTouchListener {
 
-    public static final int TYPE_MOVE = 1;
-    public static final int TYPE_EXTEND = 2;
-    public static final int TYPE_CLICK = 3;
+    public static final int TYPE_MOVE = 1;//移动类型
+    public static final int TYPE_EXTEND = 2;//伸缩
+    public static final int TYPE_CLICK = 3;//点击
 
+    /**
+     * 时间轴
+     */
     private static String[] titles = {"09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30"
             , "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"};
 
+
     private static String subTitle = ":30";
 
+    /**
+     * 线的颜色
+     */
     private int lineColor = Color.parseColor("#b3b3b3");
 
+    /**
+     * 高亮title的颜色
+     */
     private int lightTitleColor = Color.parseColor("#71baff");
+    /**
+     * title的默认颜色
+     */
     private int titleColor = Color.parseColor("#666666");
-//    private int textSize = LocalDisplay.dp2px(12);
+
     private int textSize = 24;
 
     private int textColor = Color.parseColor("#fefefe");
+
+    /**
+     * 预定的颜色
+     */
     private int bookColor = Color.parseColor("#a771baff");
     private int bookStrokeColor = Color.parseColor("#71baff");
     private int usedColor = Color.parseColor("#a7ff4081");
     private int usedStrokeColor = Color.parseColor("#FF4081");
     private float round = 10f;//区域圆角
 
-//    private float extendPointR = LocalDisplay.dp2px(8);//拉伸点半径
-//    private int space = LocalDisplay.dp2px(25);//刻度间隔
-
-    private float extendPointR =16;//拉伸点半径
-        private int space = 35;//刻度间隔
+    private float extendPointR = 16;//拉伸点半径
+    private int space = 35;//刻度间隔
 
 
     private int offset = 100;//短线偏移量
@@ -52,7 +69,7 @@ public class TimeSectionPicker extends View implements View.OnTouchListener {
     private boolean isFrist = true;//初始化padding和宽高值
     private int type;//移动.扩展拉伸.点击
 
-    private Paint mPaint;
+    private Paint mPaint;//文字画笔
     private Point p1;
     private Point p2;
     private Rect titleBounds;
@@ -85,7 +102,11 @@ public class TimeSectionPicker extends View implements View.OnTouchListener {
         init();
     }
 
+    /**
+     * 初始化操作
+     */
     private void init() {
+        //文字环比
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -100,8 +121,12 @@ public class TimeSectionPicker extends View implements View.OnTouchListener {
         usedRect = new RectF();
     }
 
+    /**
+     * 设置预定的区域
+     * @param start
+     * @param count
+     */
     public void setBookArea(int start, int count) {
-//        LogUtil.huI("start:" + start + "/count:" + count);
         bookStart = start;
         bookCount = count;
         setBookRect(start, count);
@@ -172,16 +197,21 @@ public class TimeSectionPicker extends View implements View.OnTouchListener {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         if (isFrist) {//初始化参数
             //处理padding
             paddingTop = getPaddingTop();
             int paddingBottom = getPaddingBottom();
             paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
+
+            //获取真实的宽高
             width = getWidth() - paddingLeft - paddingRight;
             int height = getHeight() - paddingTop - paddingBottom;
 
+            //线的数目
             lineNumber = titles.length;
+
             bookRect.set(paddingLeft + 150, paddingTop + space * bookStart
                     , width - 30, paddingTop + space * (bookStart + bookCount));
 

@@ -6,18 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sample.calendar.mycalendar.MainActivity">
+    tools:context="com.sample.calendar.mycalendar.activity.MainActivity">
 
 
     <com.sample.calendar.calendar.CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/et"
+    <Button
+        android:id="@+id/btnAnim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="hint"/>
+        android:text="测试动画"/>
 
     <ScrollView
         android:layout_width="match_parent"

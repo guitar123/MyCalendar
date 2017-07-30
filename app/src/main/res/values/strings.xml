@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyCalendar</string>
+
+    <string name="image_transion_name">transition_animation_news_photos</string>
 </resources>
