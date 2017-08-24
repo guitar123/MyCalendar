@@ -14,6 +14,7 @@ import java.util.Formatter;
 import java.util.Locale;
 
 /**
+ * @author gasol
  */
 public class VideoUtil {
     /**
