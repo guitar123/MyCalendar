@@ -13,6 +13,9 @@ import android.view.WindowManager;
 import java.util.Formatter;
 import java.util.Locale;
 
+/**
+ * 视频工具类
+ */
 public class VideoUtil {
     /**
      * Get activity from context object
