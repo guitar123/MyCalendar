@@ -14,7 +14,7 @@ import java.util.Formatter;
 import java.util.Locale;
 
 /**
- * 视频工具类
+ * 视频工具
  */
 public class VideoUtil {
     /**
