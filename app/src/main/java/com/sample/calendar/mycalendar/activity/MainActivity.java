@@ -8,7 +8,9 @@ import android.widget.Button;
 
 import com.sample.calendar.mycalendar.R;
 
-
+/**
+ *
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mBtnAnim;
