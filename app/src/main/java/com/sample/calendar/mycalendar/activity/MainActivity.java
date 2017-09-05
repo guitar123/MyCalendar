@@ -10,6 +10,7 @@ import com.sample.calendar.mycalendar.R;
 
 /**
  *
+ * @author gasol
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
