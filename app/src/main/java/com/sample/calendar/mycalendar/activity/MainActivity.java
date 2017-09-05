@@ -8,9 +8,12 @@ import android.widget.Button;
 
 import com.sample.calendar.mycalendar.R;
 
-
+/**
+ * @author gasol
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //测试
     private Button mBtnAnim;
 
     @Override
